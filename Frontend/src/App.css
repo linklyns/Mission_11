@@ -1,0 +1,234 @@
+.app-container {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top right, #eef7ff 0, transparent 35%),
+    radial-gradient(circle at top left, #f7f4ff 0, transparent 30%), #f5f7fa;
+}
+
+.app-header {
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e7ebf0;
+  padding: 2.6rem 2rem 2.2rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.app-header h1 {
+  font-size: clamp(2.1rem, 4vw, 2.9rem);
+  margin: 0;
+  color: #102a43;
+  letter-spacing: 0.02em;
+}
+
+.app-header p {
+  margin: 0.45rem 0 0;
+  color: #486581;
+  font-size: 1rem;
+}
+
+.app-main {
+  padding: 2rem 1.2rem 2.8rem;
+}
+
+.status-message {
+  margin: 1rem auto;
+  width: min(1100px, 100%);
+  color: #35536f;
+  text-align: center;
+}
+
+.status-message.error {
+  color: #b42318;
+}
+
+.catalog-panel {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.catalog-toolbar {
+  background: #ffffff;
+  border: 1px solid #e4e8ef;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  margin-bottom: 1rem;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto;
+  gap: 0.85rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.field label {
+  color: #334e68;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.field input,
+.field select {
+  border: 1px solid #d0d7e2;
+  border-radius: 12px;
+  background: #fbfcfe;
+  color: #102a43;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #6fa8dc;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+}
+
+.field-compact {
+  min-width: 160px;
+}
+
+.catalog-meta {
+  margin: 0.75rem 0 0;
+  color: #627d98;
+  font-size: 0.9rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.book-card {
+  background: #ffffff;
+  border: 1px solid #e4e8ef;
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.1);
+}
+
+.book-card h2 {
+  margin: 0;
+  color: #102a43;
+  font-size: 1.16rem;
+  line-height: 1.25;
+}
+
+.book-author {
+  margin: 0;
+  color: #486581;
+  font-size: 0.95rem;
+}
+
+.book-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.book-details p {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  color: #334e68;
+  font-size: 0.9rem;
+}
+
+.book-details span {
+  color: #829ab1;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.book-price {
+  margin: auto 0 0;
+  font-size: 1.12rem;
+  color: #0f5132;
+  font-weight: 700;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 0;
+  padding: 2.2rem 1rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px dashed #c4cfdd;
+  color: #627d98;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  min-width: 2.15rem;
+  border-radius: 10px;
+  border: 1px solid #d3dae6;
+  background: #ffffff;
+  color: #334e68;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover {
+  border-color: #91b4d8;
+  background: #f2f7fc;
+}
+
+.pagination button.active {
+  border-color: #1665d8;
+  background: #1665d8;
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .app-header {
+    padding: 2rem 1rem 1.7rem;
+  }
+
+  .app-main {
+    padding: 1.25rem 0.85rem 2rem;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-meta {
+    margin-top: 0.9rem;
+  }
+}
