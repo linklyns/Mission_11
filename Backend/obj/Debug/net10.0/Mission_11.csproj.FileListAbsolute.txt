@@ -143,3 +143,4 @@ C:\Users\lyons\Documents\github\Mission_11\Backend\obj\Debug\net10.0\refint\Miss
 C:\Users\lyons\Documents\github\Mission_11\Backend\obj\Debug\net10.0\Mission_11.pdb
 C:\Users\lyons\Documents\github\Mission_11\Backend\obj\Debug\net10.0\Mission_11.genruntimeconfig.cache
 C:\Users\lyons\Documents\github\Mission_11\Backend\obj\Debug\net10.0\ref\Mission_11.dll
+C:\Users\lyons\Documents\github\Mission_11\Backend\obj\Debug\net10.0\Mission_11.sourcelink.json
