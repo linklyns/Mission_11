@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import './App.css'
 import CartView from './components/CartView'
 import CatalogView from './components/CatalogView'
+import { fetchBooks } from './api/booksApi'
 import type { Book, CartItem, CatalogLocation } from './books.types'
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5142'
 const PAGE_SIZE_OPTIONS = [5, 10, 15, 25, 50]
 const CART_STORAGE_KEY = 'mission11-cart'
 const currencyFormatter = new Intl.NumberFormat('en-US', {
@@ -82,15 +83,7 @@ function Books() {
 
     const loadBooks = async () => {
       try {
-        const response = await fetch(`${API_BASE_URL}/api/books`, {
-          signal: abortController.signal,
-        })
-
-        if (!response.ok) {
-          throw new Error(`Request failed with status ${response.status}`)
-        }
-
-        const data: Book[] = await response.json()
+        const data = await fetchBooks(abortController.signal)
         setBooks(data)
       } catch (err) {
         if (err instanceof DOMException && err.name === 'AbortError') {
@@ -290,6 +283,11 @@ function Books() {
       <header className="app-header">
         <h1>Bookstore</h1>
         <p>Discover books from the catalog.</p>
+        <p className="mt-3 mb-0">
+          <Link to="/admin" className="secondary-button text-decoration-none">
+            Open Admin View
+          </Link>
+        </p>
       </header>
       <main className="app-main">
         <div className="container-xxl">

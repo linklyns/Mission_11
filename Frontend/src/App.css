@@ -685,6 +685,41 @@
   filter: brightness(0.35);
 }
 
+.admin-page {
+  background:
+    radial-gradient(circle at top right, #ecfff7 0, transparent 35%),
+    radial-gradient(circle at top left, #fff7ed 0, transparent 30%), #f6faf7;
+}
+
+.admin-page .app-header {
+  border-bottom-color: #d9efe4;
+  box-shadow: 0 8px 20px rgba(4, 120, 87, 0.08);
+}
+
+.admin-page .catalog-toolbar {
+  border-color: #cde9dc;
+  box-shadow: 0 10px 24px rgba(4, 120, 87, 0.08);
+}
+
+.admin-page .cart-summary {
+  background: #effaf5;
+  border-color: #bfe8d4;
+}
+
+.admin-page .secondary-button {
+  color: #0b5f43;
+  border-color: #91d1b4;
+}
+
+.admin-page .secondary-button:hover {
+  background: #e8f8ef;
+  border-color: #5fb88e;
+}
+
+.admin-page .book-card {
+  border-color: #d7eee2;
+}
+
 .offcanvas-body .cart-header {
   flex-direction: column;
   margin-bottom: 0.5rem;
