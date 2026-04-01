@@ -144,3 +144,16 @@ C:\Users\lyons\Documents\github\Mission_11\Backend\obj\Debug\net10.0\Mission_11.
 C:\Users\lyons\Documents\github\Mission_11\Backend\obj\Debug\net10.0\Mission_11.genruntimeconfig.cache
 C:\Users\lyons\Documents\github\Mission_11\Backend\obj\Debug\net10.0\ref\Mission_11.dll
 C:\Users\lyons\Documents\github\Mission_11\Backend\obj\Debug\net10.0\Mission_11.sourcelink.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\web.config
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\appsettings.Development.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\appsettings.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\Mission_11.deps.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\Mission_11.runtimeconfig.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\Mission_11.staticwebassets.endpoints.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\publish\web.config
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\publish\appsettings.Development.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\publish\appsettings.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\publish\Mission_11.deps.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\publish\Mission_11.runtimeconfig.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\publish\publish\Mission_11.staticwebassets.endpoints.json
+C:\Users\lyons\Documents\github\Mission_11\Backend\bin\Debug\net10.0\Bookstore.sqlite

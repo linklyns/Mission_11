@@ -7,6 +7,7 @@ type CatalogViewProps = {
   showingTo: number
   searchTitle: string
   selectedCategory: string
+  isAlphabeticalSort: boolean
   categoryOptions: string[]
   rowsPerPage: number
   pageSizeOptions: number[]
@@ -17,6 +18,7 @@ type CatalogViewProps = {
   quantityByBookId: Map<number, number>
   onSearchTitleChange: (value: string) => void
   onCategoryChange: (value: string) => void
+  onSetAlphabeticalSort: (isSorted: boolean) => void
   onRowsPerPageChange: (value: number) => void
   onPageChange: (pageNumber: number) => void
   onAddToCart: (book: Book) => void
@@ -31,6 +33,7 @@ function CatalogView({
   showingTo,
   searchTitle,
   selectedCategory,
+  isAlphabeticalSort,
   categoryOptions,
   rowsPerPage,
   pageSizeOptions,
@@ -41,6 +44,7 @@ function CatalogView({
   quantityByBookId,
   onSearchTitleChange,
   onCategoryChange,
+  onSetAlphabeticalSort,
   onRowsPerPageChange,
   onPageChange,
   onAddToCart,
@@ -65,7 +69,7 @@ function CatalogView({
             </div>
           </div>
 
-          <div className="col-12 col-sm-6 col-lg-3">
+          <div className="col-12 col-sm-6 col-lg-2">
             <div className="form-floating">
               <select
                 id="filter-category"
@@ -84,7 +88,22 @@ function CatalogView({
             </div>
           </div>
 
-          <div className="col-12 col-sm-6 col-lg-3">
+          <div className="col-12 col-sm-6 col-lg-2">
+            <div className="form-floating">
+              <select
+                id="sort-order"
+                className="form-control"
+                value={isAlphabeticalSort ? 'az' : 'default'}
+                onChange={(event) => onSetAlphabeticalSort(event.target.value === 'az')}
+              >
+                <option value="default">Default order</option>
+                <option value="az">Title A-Z</option>
+              </select>
+              <label htmlFor="sort-order">Sort</label>
+            </div>
+          </div>
+
+          <div className="col-12 col-sm-6 col-lg-2">
             <div className="form-floating">
               <select
                 id="rows-per-page"

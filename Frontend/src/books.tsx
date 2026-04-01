@@ -72,6 +72,7 @@ function Books() {
   const [currentPage, setCurrentPage] = useState(1)
   const [searchTitle, setSearchTitle] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
+  const [isAlphabeticalSort, setIsAlphabeticalSort] = useState(false)
   const [cartItems, setCartItems] = useState<CartItem[]>(() => getSessionCart())
   const [lastAddedLocation, setLastAddedLocation] =
     useState<CatalogLocation | null>(null)
@@ -133,7 +134,7 @@ function Books() {
     const normalizedSearch = searchTitle.trim().toLowerCase()
     const normalizedCategory = selectedCategory.trim().toLowerCase()
 
-    return books.filter((book) => {
+    const matchingBooks = books.filter((book) => {
       const matchesTitle =
         !normalizedSearch || book.title.toLowerCase().includes(normalizedSearch)
       const matchesCategory =
@@ -142,7 +143,13 @@ function Books() {
 
       return matchesTitle && matchesCategory
     })
-  }, [books, searchTitle, selectedCategory])
+
+    if (!isAlphabeticalSort) {
+      return matchingBooks
+    }
+
+    return [...matchingBooks].sort((a, b) => a.title.localeCompare(b.title))
+  }, [books, searchTitle, selectedCategory, isAlphabeticalSort])
 
   const cartItemCount = useMemo(
     () => cartItems.reduce((total, item) => total + item.quantity, 0),
@@ -173,7 +180,7 @@ function Books() {
     }
 
     setCurrentPage(1)
-  }, [searchTitle, selectedCategory, rowsPerPage])
+  }, [searchTitle, selectedCategory, rowsPerPage, isAlphabeticalSort])
 
   useEffect(() => {
     if (currentPage > totalPages) {
@@ -305,6 +312,7 @@ function Books() {
                   showingTo={showingTo}
                   searchTitle={searchTitle}
                   selectedCategory={selectedCategory}
+                  isAlphabeticalSort={isAlphabeticalSort}
                   categoryOptions={categoryOptions}
                   rowsPerPage={rowsPerPage}
                   pageSizeOptions={PAGE_SIZE_OPTIONS}
@@ -315,6 +323,7 @@ function Books() {
                   quantityByBookId={cartQuantityByBookId}
                   onSearchTitleChange={setSearchTitle}
                   onCategoryChange={setSelectedCategory}
+                  onSetAlphabeticalSort={setIsAlphabeticalSort}
                   onRowsPerPageChange={setRowsPerPage}
                   onPageChange={setCurrentPage}
                   onAddToCart={addToCart}

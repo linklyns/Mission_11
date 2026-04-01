@@ -1,6 +1,6 @@
 import type { Book } from '../books.types'
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:5142'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'https://bookstorebackend-dhh6drcpe9c0eeck.francecentral-01.azurewebsites.net'
 
 export type BookInput = Omit<Book, 'bookId'>
 
